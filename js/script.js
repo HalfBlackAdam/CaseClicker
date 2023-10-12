@@ -23337,12 +23337,12 @@ $(".stackingUpgradeContainer").on("click", ".upgrade", function() {
 
 	if (money >= stackingUpgrades[this.id]["price"]) {
 		money -= stackingUpgrades[this.id]["price"];
-		stackingUpgrades[this.id]["price"] = upgradeMultiplier(stackingUpgrades[this.id]["basePrice"], stackingUpgradesPurchased[this.id]);
+		stackingUpgrades[this.id]["price"] = upgradeMultiplier(stackingUpgrades[this.id]["basePrice"], stackingUpgradesPurchased[this.id]/10);
 		//console.log(upgradeMultiplier(stackingUpgrades[this.id]["basePrice"], stackingUpgradesPurchased[this.id]));
-		keyDiscount += stackingUpgrades[this.id]["kp"];
-		caseDiscount += stackingUpgrades[this.id]["cp"];
-		inventoryMax += stackingUpgrades[this.id]["is"];
-		acceptMoneyPerClick += stackingUpgrades[this.id]["mc"];
+		keyDiscount += stackingUpgrades[this.id]["kp"] * 10;
+		caseDiscount += stackingUpgrades[this.id]["cp"] * 10;
+		inventoryMax += stackingUpgrades[this.id]["is"] * 10;
+		acceptMoneyPerClick += stackingUpgrades[this.id]["mc"] * 10;
 		stackingUpgradesPurchased[this.id] += 1;
 	}
 	caseInfo();
